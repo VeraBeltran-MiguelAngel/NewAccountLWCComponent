@@ -1,10 +1,41 @@
 <template>
-    <lightning-card title="New Account Record" icon-name="standard:account">
-        <div class="slds-p-around_x-small">
-            <lightning-input label="Name" value={rec.Name} onchange={handleNameChange}></lightning-input>
-            <lightning-input label="Industry" value={rec.Industry} onchange={handleIndChange}></lightning-input>
-            <lightning-input type="Phone" label="Phone" value={rec.Phone} onchange={handlePhnChange}></lightning-input><br/>
-            <lightning-button label="Save Record" onclick={handleClick}></lightning-button>
-        </div>
-    </lightning-card>
+  <!--aqui diseñamos nuestro nuevo componente-->
+  <lightning-card title="New Account Record" icon-name="standard:account">
+    <div class="slds-p-around_x-small">
+      <!--Agregamos tres campos para almacenar datos.
+        En esta parte el value es lo que ingresa el usuario ,el 'rec' es una instancia
+    que hara referencia a la clase 'createAcc1' esta relacionada con newAccount.js-->
+      <lightning-input
+        label="Name"
+        value={rec.Name}
+        onchange={handleNameChange}
+      ></lightning-input>
+
+      <!--campo industria-->
+      <!--La funcion onchange se usa para asignar los valores del campo en 
+        el atributo del objeto para ello hace refrecnia a la funcion declarada 
+        en newAccount.js 'handleIndCange'-->
+      <lightning-input
+        label="Industry"
+        value={rec.Industry}
+        onchange={handleIndChange}
+      ></lightning-input>
+
+      <!--campo telefono-->
+      <lightning-input
+        type="Phone"
+        label="Phone"
+        value={rec.Phone}
+        onchange={handlePhnChange}
+      ></lightning-input
+      ><br />
+
+      <!--boton guardar registro-->
+      <!--la funcion handleClick se encuentra en el newAccount.js-->
+      <lightning-button
+        label="Save Record"
+        onclick={handleClick}
+      ></lightning-button>
+    </div>
+  </lightning-card>
 </template>
