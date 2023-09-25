@@ -1,0 +1,24 @@
+<apex:page controller="ciudadController">
+  <apex:form>
+    <apex:pageBlock title="Datos de ciudad">
+      <apex:pageMessages />
+
+      <!-- Campos del formulario -->
+      <apex:pageBlockSection>
+        <apex:inputField value="{!miObjeto.Name}" label="Nombre de la ciudad" />
+        <apex:inputField
+          value="{!miObjeto.Poblacion__c}"
+          label="Indice de poblacion"
+        />
+        <apex:inputField
+          value="{!miObjeto.Colonias__c}"
+          label="No. de colonias"
+        />
+      </apex:pageBlockSection>
+
+      <apex:pageBlockButtons>
+        <apex:commandButton value="Guardar" action="{!guardarMiObjeto}" />
+      </apex:pageBlockButtons>
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>
